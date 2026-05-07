@@ -12,13 +12,14 @@ A collection of prompt templates ("skills") to help Air Force pediatric resident
 | **MFR Template** | `mfr-template/` | Tongue & Quill–compliant Memorandum for Record |
 | **Patient Letters** | `patient-letters/` | Medical necessity, school medication auth, EFMP letters, accommodations |
 | **Dot Phrases** | `dot-phrases/` | Cerner My AutoText dot phrases — well-child, acute visits, EFMP |
+| **Disciplinary Action** | `disciplinary-action/` | RIC, LOC, and LOR — AFI 36-2907 compliant administrative discipline documents |
 
 ---
 
 ## How to use any skill
 
 1. Open the `SKILL.md` file in the skill folder you need.
-2. Copy the **entire prompt block** (clearly marked in each file).
+2. Copy the **entire prompt block** (clearly marked in each file between `===START===` and `===END===`).
 3. Open any LLM chat interface and paste it in.
 4. The LLM will ask you questions one at a time — answer them.
 5. Copy the finished output directly into your document, letter, or note.
@@ -46,12 +47,18 @@ These skills generate drafts from information you provide. If you are working on
 
 ---
 
+## A word on disciplinary action documents
+
+The RIC / LOC / LOR skill produces drafts only. **Always have your Staff Judge Advocate (SJA) review any Letter of Reprimand before it is signed and issued.** LOCs should be reviewed by your supervisor chain and commander. These documents have real career consequences for the member — accuracy and legal defensibility matter.
+
+---
+
 ## Tips for better output
 
 - **Be specific.** The more concrete detail you give (numbers, dates, outcomes), the better the output.
 - **One question at a time.** The prompts ask the LLM to go question-by-question — let it. Don't dump everything at once.
 - **Iterate.** After output is generated, tell the LLM "make bullet 3 stronger" or "the letter tone should be more formal." It will revise.
-- **Save your prompt.** If you build a dot phrase or letter you like, save the inputs as a personal template so next time is even faster.
+- **Save your prompt inputs.** If you build a dot phrase or letter you like, save the answers you gave as a personal template so next time is even faster.
 
 ---
 
@@ -59,14 +66,16 @@ These skills generate drafts from information you provide. If you are working on
 
 ```
 af-peds-llm-skills/
-├── README.md                  ← You are here
+├── README.md                      ← You are here
 ├── opb-template/
 │   └── SKILL.md
 ├── mfr-template/
 │   └── SKILL.md
 ├── patient-letters/
 │   └── SKILL.md
-└── dot-phrases/
+├── dot-phrases/
+│   └── SKILL.md
+└── disciplinary-action/
     └── SKILL.md
 ```
 
